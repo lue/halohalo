@@ -1,0 +1,37 @@
+UniversalFit is a program that computes the fitting functions for the
+unevolved/evolved subhalo mass/velocity functions according to the 
+universal model given in `Statistics of Dark Matter Substructure I'
+(Jiang & van den Bosch 2014).
+Upon user input of 
+- host halo mass, 
+- cosmology, and 
+- observation redshift,
+UniversalFit outputs the best-fit parameters p1-p5 of the function
+         dN/dln(x) = p1*(p5*x)^p2*exp[-p3*(p5*x)^p4]
+that best describes the average subhalo mass function or velocity 
+function of that host halo. `x' stands for 
+- m_acc/M_0			for unevolved subhalo mass function (USMF)
+- m/M_0 			for evolved subhalo mass function (ESMF)
+- V_acc/V_vir,0		for unevolved subhalo velocity function (USVF)
+- V_max/V_vir,0		for evolved subhalo velocity function (ESVF)
+
+To compile and run the program:
+$ make -f UniversalFit.mke
+$ ./UniversalFit < FILENAME.in
+where the input file (.in) looks like: 
+-----------------------------------------------------------------------
+0.3                          ! (1) Omega_m,0			      [0.1,0.5]
+0.7                          ! (2) h (= H_0/100)              [0.5,1.0]
+0.9                          ! (3) sigma_8                    [0.5,1.0]
+1.0                          ! (4) n_spec
+0.0196	                     ! (5) Omega_b_h2
+3                            ! (6) P(k)  (1=BBKS, 2=EBW, 3=EH)
+0.0                          ! (7) WDM filter mass (0.0 = CDM)
+2                            ! (8) Method       (1=num, 2=fit)
+12.23                        ! (9) halo mass log[M_0/(M_sun/h)] [10,15]
+0.00                         ! (10) redshift z0               [0.0,6.0]
+RESULTS/
+
+-----------------------------------------------------------------------
+where users should specify entry (1)-(4) and entry (9)-(10).
+The [] indicate the recommended range for each customizable entry.

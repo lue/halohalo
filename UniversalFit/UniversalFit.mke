@@ -1,0 +1,18 @@
+# Compile UNIX (SUN) version of software for UniversalFit.f
+
+COMPILER = gfortran
+
+FC = gfortran
+
+FFLAGS = -u -O2
+
+OBJECTS  = UniversalFit.o cosmo_sub.o init.o nrecip.o aux.o quadpack.o
+
+UniversalFit: ${OBJECTS}
+	 ${COMPILER} -o UniversalFit ${OBJECTS} -lm
+
+UniversalFit.o: UniversalFit.f
+	   ${COMPILER} ${FFLAGS} -c UniversalFit.f
+
+${OBJECTS}: paramfile.h
+ 
