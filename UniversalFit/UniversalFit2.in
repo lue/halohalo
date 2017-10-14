@@ -1,0 +1,11 @@
+0.3                                          ! Omega_m,0
+0.7                                          ! h (= H_0/100)
+0.9                                          ! sigma_8
+1.0                                          ! n_spec
+0.0196	                                     ! Omega_b_h2
+3                                            ! P(k) (1=BBKS, 2=EBW, 3=EH)
+0.0                                          ! WDM filter mass (0.0 = CDM)
+2                                            ! Method       (1=num, 2=fit)
+14.23                                        ! halo mass log[M_0/(M_sun/h)]
+0.5                                          ! redshift z0
+RESULTS/

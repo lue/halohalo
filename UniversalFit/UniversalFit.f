@@ -114,17 +114,17 @@ c---output useful info on screen
 c---output the model functions for the unevolved/evolved SHMF/SHVF
 
       k1 = INT(xlgMhalo*100/1000)
-      k2 = INT(MOD(xlgMhalo*100,1000)/100)
-      k3 = INT(MOD(xlgMhalo*100,100)/10)
-      k4 = MOD(xlgMhalo*100,10)
+      k2 = INT(MOD(INT(xlgMhalo*100),1000)/100)
+      k3 = INT(MOD(INT(xlgMhalo*100),100)/10)
+      k4 = MOD(INT(xlgMhalo*100),10)
       id1 = CHAR(k1+ICHAR(null))
       id2 = CHAR(k2+ICHAR(null))
       id3 = CHAR(k3+ICHAR(null))
       id4 = CHAR(k4+ICHAR(null))
       
       k5 = INT(znow*100/100)
-      k6 = INT(MOD(znow*100,100)/10)
-      k7 = MOD(znow*100,10)
+      k6 = INT(MOD(INT(znow*100),100)/10)
+      k7 = MOD(INT(znow*100),10)
       id5 = CHAR(k5+ICHAR(null))
       id6 = CHAR(k6+ICHAR(null))
       id7 = CHAR(k7+ICHAR(null))
